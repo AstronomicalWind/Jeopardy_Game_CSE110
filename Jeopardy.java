@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Jepardy
+public class Jeopardy
 {
 
 	public static void main(String[] args) 
@@ -8,7 +8,7 @@ public class Jepardy
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("*****Welcome to Japrdy!***** \n");
+		System.out.println("*****Welcome to Jeopardy!***** \n");
 		System.out.println("Enter Player Name: ");
 		
 		String name = scan.nextLine();
@@ -64,8 +64,8 @@ public class Jepardy
 	  public static void printMainMenu()
 	   {
 	    System.out.print(
-	    		"\nA: Georgraphy "
-	    		+"\nB: Mathamatics"
+	    		"\nA: Geography "
+	    		+"\nB: Mathematics"
 	    		+"\nC: Sports"
 	    		+"\nD: CSE Terminology"
 	    		+"\nE: World History+\n");
