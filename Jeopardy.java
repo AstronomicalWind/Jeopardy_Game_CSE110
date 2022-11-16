@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Jeopardy
+public class Jepardy
 {
 
 	public static void main(String[] args) 
@@ -8,7 +8,7 @@ public class Jeopardy
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("*****Welcome to Jeopardy!***** \n");
+		System.out.println("*****Welcome to Japrdy!***** \n");
 		System.out.println("Enter Player Name: ");
 		
 		String name = scan.nextLine();
@@ -23,32 +23,175 @@ public class Jeopardy
 		System.out.println("\nChoose a Topic \n");
 	
 		
-		  choice = scan.next().toLowerCase();
+		choice = scan.next();
 	       command = choice.charAt(0);
 		
 		switch(command)
 		{
-			case 'a':
+			case 'A':
 			{
-				System.out.println("Choose a point value \n");
+				
 				printPointMenu();
+				System.out.println("Choose a point value \n");
 				pointChoice = scan.nextInt();
 				
 				switch(pointChoice)
 				{
 					case 100:
+					{
 						System.out.println("This is the question that will be stored in the array ");
+						break;
+					}
+					case 200:
+					{
 						
-					break;
-					
+					}
+					case 300:
+					{
+						
+					}
+					case 400:
+					{
+						
+					}
+					case 500:
+					{
+						
+					}
 				}
+			}
 				break;
 			
+			case 'B':
+			{
+				
+				printPointMenu();
+				System.out.println("Choose a point value \n");
+				pointChoice = scan.nextInt();
+				switch(pointChoice)
+				{
+					case 100:
+					{
+						System.out.println("This is the question that will be stored in the array ");
+						break;
+					}
+					case 200:
+					{
+						
+					}
+					case 300:
+					{
+						
+					}
+					case 400:
+					{
+						
+					}
+					case 500:
+					{
+						
+					}
+				}
+				break;
+			}
+			case 'C':
+			{
+				printPointMenu();
+				System.out.println("Choose a point value \n");
+				pointChoice = scan.nextInt();
+				switch(pointChoice)
+				{
+					case 100:
+					{
+						System.out.println("This is the question that will be stored in the array ");
+						break;
+					}
+					case 200:
+					{
+						
+					}
+					case 300:
+					{
+						
+					}
+					case 400:
+					{
+						
+					}
+					case 500:
+					{
+						
+					}
+				}
+				break;
+			}
+			case 'D': 
+			{
+				printPointMenu();
+				System.out.println("Choose a point value \n");
+				pointChoice = scan.nextInt();
+				switch(pointChoice)
+				{
+					case 100:
+					{
+						System.out.println("This is the question that will be stored in the array ");
+						break;
+					}
+					case 200:
+					{
+						
+					}
+					case 300:
+					{
+						
+					}
+					case 400:
+					{
+						
+					}
+					case 500:
+					{
+						
+					}
+				}
+				break;
+			}
+			case 'E':
+			{
+				printPointMenu();
+				System.out.println("Choose a point value \n");
+				pointChoice = scan.nextInt();
+				switch(pointChoice)
+				{
+					case 100:
+					{
+						System.out.println("This is the question that will be stored in the array ");
+						break;
+					}
+					case 200:
+					{
+						
+					}
+					case 300:
+					{
+						
+					}
+					case 400:
+					{
+						
+					}
+					case 500:
+					{
+						
+					}
+				}
+				break;
 			}
 				
-				
-				
+			}
 		}
+					
+	
 		
 		
 		
@@ -57,15 +200,12 @@ public class Jeopardy
 		//Player p1 = new Player (name,);
 		
 		
-		
-		
-	}
 	
 	  public static void printMainMenu()
 	   {
 	    System.out.print(
-	    		"\nA: Geography "
-	    		+"\nB: Mathematics"
+	    		"\nA: Georgraphy "
+	    		+"\nB: Mathamatics"
 	    		+"\nC: Sports"
 	    		+"\nD: CSE Terminology"
 	    		+"\nE: World History+\n");
@@ -81,5 +221,4 @@ public class Jeopardy
 				+"\n400: "
 		  		+"\n500: ");
 	  }
-
 }
