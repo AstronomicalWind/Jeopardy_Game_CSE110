@@ -16,199 +16,217 @@ public class Jepardy
 		String choice;
 		char command;
 		
-		int pointChoice ;
+		int pointChoice =0;
 		
-		
+		do {
 		printMainMenu();
 		System.out.println("\nChoose a Topic \n");
 	
 		
-		choice = scan.next();
-	       command = choice.charAt(0);
+		  choice = scan.next().toLowerCase();
+	      command = choice.charAt(0);
+	  	//Player p1 = new Player (name,);
 		
-		switch(command)
-		{
-			case 'A':
+			switch(command)
 			{
-				
-				printPointMenu();
-				System.out.println("Choose a point value \n");
-				pointChoice = scan.nextInt();
-				
-				switch(pointChoice)
+				case 'a':
 				{
-					case 100:
+				do {
+					printPointMenu();
+					System.out.println("Choose a point value \n");
+					pointChoice = scan.nextInt();
+				
+					switch(pointChoice)
 					{
-						System.out.println("This is the question that will be stored in the array ");
-						break;
+						case 100:
+						{
+							System.out.println("This is the question that will be stored in the array ");
+							break;
+						}
+						case 200:
+						{
+							System.out.println("This is the question that will be stored in the array ");
+							break;
+						}
+						case 300:
+						{
+							System.out.println("This is the question that will be stored in the array ");
+							break;
+						}
+						case 400:
+						{
+							System.out.println("This is the question that will be stored in the array ");
+							break;
+						}
+						case 500:
+						{
+							System.out.println("This is the question that will be stored in the array ");
+							break;
+						}
+						default: System.out.println("Invalid input");
 					}
-					case 200:
-					{
-						
-					}
-					case 300:
-					{
-						
-					}
-					case 400:
-					{
-						
-					}
-					case 500:
-					{
-						
-					}
+					}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
 				}
-			}
-				break;
+					break;
 			
-			case 'B':
-			{
-				
-				printPointMenu();
-				System.out.println("Choose a point value \n");
-				pointChoice = scan.nextInt();
-				switch(pointChoice)
+				case 'b':
 				{
-					case 100:
-					{
-						System.out.println("This is the question that will be stored in the array ");
-						break;
-					}
-					case 200:
-					{
-						
-					}
-					case 300:
-					{
-						
-					}
-					case 400:
-					{
-						
-					}
-					case 500:
-					{
-						
-					}
-				}
-				break;
-			}
-			case 'C':
-			{
-				printPointMenu();
-				System.out.println("Choose a point value \n");
-				pointChoice = scan.nextInt();
-				switch(pointChoice)
-				{
-					case 100:
-					{
-						System.out.println("This is the question that will be stored in the array ");
-						break;
-					}
-					case 200:
-					{
-						
-					}
-					case 300:
-					{
-						
-					}
-					case 400:
-					{
-						
-					}
-					case 500:
-					{
-						
-					}
-				}
-				break;
-			}
-			case 'D': 
-			{
-				printPointMenu();
-				System.out.println("Choose a point value \n");
-				pointChoice = scan.nextInt();
-				switch(pointChoice)
-				{
-					case 100:
-					{
-						System.out.println("This is the question that will be stored in the array ");
-						break;
-					}
-					case 200:
-					{
-						
-					}
-					case 300:
-					{
-						
-					}
-					case 400:
-					{
-						
-					}
-					case 500:
-					{
-						
-					}
-				}
-				break;
-			}
-			case 'E':
-			{
-				printPointMenu();
-				System.out.println("Choose a point value \n");
-				pointChoice = scan.nextInt();
-				switch(pointChoice)
-				{
-					case 100:
-					{
-						System.out.println("This is the question that will be stored in the array ");
-						break;
-					}
-					case 200:
-					{
-						
-					}
-					case 300:
-					{
-						
-					}
-					case 400:
-					{
-						
-					}
-					case 500:
-					{
-						
-					}
-				}
-				break;
-			}
-				
-			}
-		}
+					do {
+						printPointMenu();
+						System.out.println("Choose a point value \n");
+						pointChoice = scan.nextInt();
 					
-	
+						switch(pointChoice)
+						{
+							case 100:
+							{
+								System.out.println("This is the question that will be stored in the array ");
+								break;
+							}
+							case 200:
+							{
+								break;
+							}
+							case 300:
+							{
+								break;
+							}
+							case 400:
+							{
+								break;
+							}
+							case 500:
+							{	
+								break;
+							}
+							default: System.out.println("Invalid input");
+						}
+						}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
+					break;
+				}
+				case 'c':
+				{
+					do {
+						printPointMenu();
+						System.out.println("Choose a point value \n");
+						pointChoice = scan.nextInt();
+					
+						switch(pointChoice)
+						{
+							case 100:
+							{
+								System.out.println("This is the question that will be stored in the array ");
+								break;
+							}
+							case 200:
+							{
+								break;
+							}
+							case 300:
+							{
+								break;
+							}
+							case 400:
+							{
+								break;
+							}
+							case 500:
+							{
+								break;
+							}
+							default: System.out.println("Invalid input");
+						}
+						}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
+					break;
+				}
+				case 'd': 
+				{
+					do {
+						printPointMenu();
+						System.out.println("Choose a point value \n");
+						pointChoice = scan.nextInt();
+					
+						switch(pointChoice)
+						{
+							case 100:
+							{
+								System.out.println("This is the question that will be stored in the array ");
+								break;
+							}
+							case 200:
+							{
+								break;
+							}
+							case 300:
+							{
+								break;
+							}
+							case 400:
+							{	
+								break;
+							}
+							case 500:
+							{
+								break;
+							}
+							default: System.out.println("Invalid input");
+						}
+						}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
+					break;
+				}
+				case 'e':
+				{
+					do {
+						printPointMenu();
+						System.out.println("Choose a point value \n");
+						pointChoice = scan.nextInt();
+					
+						switch(pointChoice)
+						{
+							case 100:
+							{
+								System.out.println("This is the question that will be stored in the array ");
+								break;
+							}
+							case 200:
+							{
+								break;
+							}
+							case 300:
+							{
+								break;
+							}
+							case 400:
+							{
+								break;
+							}
+							case 500:
+							{
+								break;
+							}
+							default: System.out.println("Invalid input");
+						}
+						}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
+					break;
+					
+					}
+			
+					
+				default: System.out.println("Invalid input");
+			}
+			}while (command !='a' && command != 'b' && command != 'c' && command != 'd' && command !='e');
+		}
 		
-		
-		
-		 
-		
-		//Player p1 = new Player (name,);
-		
-		
-	
+
 	  public static void printMainMenu()
 	   {
 	    System.out.print(
-	    		"\nA: Georgraphy "
-	    		+"\nB: Mathamatics"
-	    		+"\nC: Sports"
-	    		+"\nD: CSE Terminology"
-	    		+"\nE: World History+\n");
+	    		"\na: Georgraphy "
+	    		+"\nb: Mathamatics"
+	    		+"\nc: Sports"
+	    		+"\nd: CSE Terminology"
+	    		+"\ne: World History"
+	    		);
 	              
 	    } // end of the printMenu method
 	  
@@ -221,4 +239,9 @@ public class Jepardy
 				+"\n400: "
 		  		+"\n500: ");
 	  }
+	  public static void funtionMenu()
+	  {
+		  
+	  }
+
 }
