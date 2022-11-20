@@ -1,13 +1,25 @@
 
 public class Player {
+Questions question = new Questions();
 private String name;
 private static String p1Name;
 private static String p2Name;
+private static int totalPoints=0;
 private int points;
 private static int turn=1;
 public Player(String name)
 {
 	this.name=name;
+}
+public void addToTotal(int points)
+{
+	totalPoints=totalPoints+points;
+	if (totalPoints==7500)
+	{
+		System.out.println("***The Game has ended, press p to view the final score***");
+		
+		
+	}
 }
 
 public void assignPlayer1(String name)
@@ -23,6 +35,7 @@ public void assignPlayer2(String name)
 public void addPoints(int points)
 {
 	this.points=this.points+points;
+	this.addToTotal(Math.abs(points));
 }
 public void determineTurn(int earnedPoints)
 {
