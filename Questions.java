@@ -150,27 +150,28 @@ public String retrieveQuestion(int cat, int match)
 	
 	if (cat==1)
 	{
-		return (geographyQuestions[this.matchIndex(cat, index)]);
+		
+		return (geographyQuestions[match]);
 
 	}
 	if (cat==2)
 	{
-		return (mathematicsQuestions[this.matchIndex(cat, index)]);
+		return (mathematicsQuestions[match]);
 
 	}
 	if (cat==3)
 	{
-		return (sportsQuestions[this.matchIndex(cat, index)]);
+		return (sportsQuestions[match]);
 
 	}
 	if (cat==4)
 	{
-		return (cse110Questions[this.matchIndex(cat, index)]);
+		return (cse110Questions[match]);
 
 	}
 	if (cat==5)
 	{
-		return (historyQuestions[this.matchIndex(cat, index)]);
+		return (historyQuestions[match]);
 
 	}
 	else
