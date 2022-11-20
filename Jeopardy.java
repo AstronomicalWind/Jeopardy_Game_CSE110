@@ -2,23 +2,30 @@ import java.util.Scanner;
 
 public class Jeopardy
 {
-
+//false means player1's turn
+//true means player2's turn
 	public static void main(String[] args) 
 	{
 		
 		Scanner scan = new Scanner(System.in);
 		Questions question = new Questions();
 		System.out.println("*****Welcome to Jeopardy!***** \n");
-		System.out.println("Enter Player Name: ");
-		
+		System.out.println("Enter Player 1 Name: ");
 		String name = scan.nextLine();
-		
+		Player player1= new Player(name);
+		player1.assignPlayer1(name);
+		System.out.println("Enter Player 2 Name: ");
+		name = scan.nextLine();
+		Player player2= new Player(name);
+		player2.assignPlayer2(name);
 		String choice;
 		char command;
+		int turn=1;
 		boolean clock=false;
 		int pointChoice =0;
 		
 		do {
+		
 		printMainMenu();
 		System.out.println("\nChoose a Topic \n");
 	
@@ -45,9 +52,24 @@ public class Jeopardy
 				int pointVal=pointChoice;
 				System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));
 				//System.out.println(question.matchIndex(cat, pointVal));
-				String answer = scan.next();
+				String input=scan.nextLine();
+				String answer = scan.nextLine();
+				int point=question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal));
 				System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
 				question.updatePoints(cat, question.matchIndex(cat, pointVal));
+				turn=player1.getTurn();
+				
+				
+				if (turn==1)
+				{
+					player1.addPoints(point);
+				}
+				else if (turn==-1)
+				{
+					player2.addPoints(point);
+					System.out.println("turn2");
+				}
+				player1.determineTurn(point);
 				clock=false;
 					break;
 			
@@ -68,7 +90,19 @@ public class Jeopardy
 					//System.out.println(question.matchIndex(cat, pointVal));
 					answer = scan.next();
 					System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+					point=question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal));
 					question.updatePoints(cat, question.matchIndex(cat, pointVal));
+					
+					turn=player1.getTurn();
+					if (turn==1)
+					{
+						player1.addPoints(point);
+					}
+					else if (turn==-1)
+					{
+						player2.addPoints(point);
+					}
+					player1.determineTurn(point);
 					clock=false;
 						break;
 				
@@ -88,11 +122,22 @@ public class Jeopardy
 					 pointVal=pointChoice;
 					System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));
 					//System.out.println(question.matchIndex(cat, pointVal));
-					String input=scan.nextLine();
+					input=scan.nextLine();
 					answer = scan.nextLine();
-					System.out.println(answer);
 					System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+					point=question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal));
 					question.updatePoints(cat, question.matchIndex(cat, pointVal));
+					
+					turn=player1.getTurn();
+					if (turn==1)
+					{
+						player1.addPoints(point);
+					}
+					else if (turn==-1)
+					{
+						player2.addPoints(point);
+					}
+					player1.determineTurn(point);
 					clock=false;
 					break;
 				case 'd': 
@@ -112,7 +157,19 @@ public class Jeopardy
 					//System.out.println(question.matchIndex(cat, pointVal));
 					answer = scan.next();
 					System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+					point=question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal));
 					question.updatePoints(cat, question.matchIndex(cat, pointVal));
+					
+					turn=player1.getTurn();
+					if (turn==1)
+					{
+						player1.addPoints(point);
+					}
+					else if (turn==-1)
+					{
+						player2.addPoints(point);
+					}
+					player1.determineTurn(point);
 					clock=false;
 						break;
 				case 'e':
@@ -131,12 +188,29 @@ public class Jeopardy
 					System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));					//System.out.println(question.matchIndex(cat, pointVal));
 					input=scan.nextLine();
 					answer = scan.nextLine();
-					System.out.println(answer);
 					System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+					point=question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal));
 					question.updatePoints(cat, question.matchIndex(cat, pointVal));
+					
+					turn=player1.getTurn();
+					if (turn==1)
+					{
+						player1.addPoints(point);
+					}
+					else if (turn==-1)
+					{
+						player2.addPoints(point);
+					}
+					player1.determineTurn(point);
 					clock=false;
 					break;
 					
+				case 'p':
+				{
+					System.out.println(player1.toString()+": "+player1.returnScore());
+					System.out.println(player2.toString()+": "+player2.returnScore());
+					break;
+				}
 					
 			
 					
@@ -158,6 +232,8 @@ public class Jeopardy
 	              
 	    } // end of the printMenu method
 	  
+
+	  
 //	  public static void printPointMenu()
 //	  {
 //		  System.out.println(
@@ -167,9 +243,6 @@ public class Jeopardy
 //				+"\n400: "
 //		  		+"\n500: ");
 //	  }
-	  public static void funtionMenu()
-	  {
-		  
-	  }
+	 
 
 }
