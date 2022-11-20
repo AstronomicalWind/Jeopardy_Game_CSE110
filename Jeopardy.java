@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Jepardy
+public class Jeopardy
 {
 
 	public static void main(String[] args) 
