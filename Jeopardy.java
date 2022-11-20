@@ -1,21 +1,21 @@
 import java.util.Scanner;
 
-public class Jepardy
+public class Jeopardy
 {
 
 	public static void main(String[] args) 
 	{
 		
 		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("*****Welcome to Japrdy!***** \n");
+		Questions question = new Questions();
+		System.out.println("*****Welcome to Jeopardy!***** \n");
 		System.out.println("Enter Player Name: ");
 		
 		String name = scan.nextLine();
 		
 		String choice;
 		char command;
-		
+		boolean clock=false;
 		int pointChoice =0;
 		
 		do {
@@ -25,6 +25,7 @@ public class Jepardy
 		
 		  choice = scan.next().toLowerCase();
 	      command = choice.charAt(0);
+	      clock=true;
 	  	//Player p1 = new Player (name,);
 		
 			switch(command)
@@ -32,189 +33,116 @@ public class Jepardy
 				case 'a':
 				{
 				do {
-					printPointMenu();
+					//printPointMenu();
+					System.out.println(question.toString(1));
 					System.out.println("Choose a point value \n");
 					pointChoice = scan.nextInt();
-				
-					switch(pointChoice)
-					{
-						case 100:
-						{
-							System.out.println("This is the question that will be stored in the array ");
-							break;
-						}
-						case 200:
-						{
-							System.out.println("This is the question that will be stored in the array ");
-							break;
-						}
-						case 300:
-						{
-							System.out.println("This is the question that will be stored in the array ");
-							break;
-						}
-						case 400:
-						{
-							System.out.println("This is the question that will be stored in the array ");
-							break;
-						}
-						case 500:
-						{
-							System.out.println("This is the question that will be stored in the array ");
-							break;
-						}
-						default: System.out.println("Invalid input");
-					}
+					
+					
 					}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
 				}
+				int cat=1;
+				int pointVal=pointChoice;
+				System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));
+				//System.out.println(question.matchIndex(cat, pointVal));
+				String answer = scan.next();
+				System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+				question.updatePoints(cat, question.matchIndex(cat, pointVal));
+				clock=false;
 					break;
 			
 				case 'b':
 				{
 					do {
-						printPointMenu();
+						//printPointMenu();
+						System.out.println(question.toString(2));
 						System.out.println("Choose a point value \n");
 						pointChoice = scan.nextInt();
-					
-						switch(pointChoice)
-						{
-							case 100:
-							{
-								System.out.println("This is the question that will be stored in the array ");
-								break;
-							}
-							case 200:
-							{
-								break;
-							}
-							case 300:
-							{
-								break;
-							}
-							case 400:
-							{
-								break;
-							}
-							case 500:
-							{	
-								break;
-							}
-							default: System.out.println("Invalid input");
-						}
+						
+						
 						}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
-					break;
-				}
+					}
+					 cat=2;
+					 pointVal=pointChoice;
+					System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));
+					//System.out.println(question.matchIndex(cat, pointVal));
+					answer = scan.next();
+					System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+					question.updatePoints(cat, question.matchIndex(cat, pointVal));
+					clock=false;
+						break;
+				
+				
 				case 'c':
 				{
 					do {
-						printPointMenu();
+						//printPointMenu();
+						System.out.println(question.toString(3));
 						System.out.println("Choose a point value \n");
 						pointChoice = scan.nextInt();
-					
-						switch(pointChoice)
-						{
-							case 100:
-							{
-								System.out.println("This is the question that will be stored in the array ");
-								break;
-							}
-							case 200:
-							{
-								break;
-							}
-							case 300:
-							{
-								break;
-							}
-							case 400:
-							{
-								break;
-							}
-							case 500:
-							{
-								break;
-							}
-							default: System.out.println("Invalid input");
-						}
+						
+						
 						}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
+					}
+					 cat=3;
+					 pointVal=pointChoice;
+					System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));
+					//System.out.println(question.matchIndex(cat, pointVal));
+					String input=scan.nextLine();
+					answer = scan.nextLine();
+					System.out.println(answer);
+					System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+					question.updatePoints(cat, question.matchIndex(cat, pointVal));
+					clock=false;
 					break;
-				}
 				case 'd': 
 				{
 					do {
-						printPointMenu();
+						//printPointMenu();
+						System.out.println(question.toString(4));
 						System.out.println("Choose a point value \n");
 						pointChoice = scan.nextInt();
-					
-						switch(pointChoice)
-						{
-							case 100:
-							{
-								System.out.println("This is the question that will be stored in the array ");
-								break;
-							}
-							case 200:
-							{
-								break;
-							}
-							case 300:
-							{
-								break;
-							}
-							case 400:
-							{	
-								break;
-							}
-							case 500:
-							{
-								break;
-							}
-							default: System.out.println("Invalid input");
-						}
+						
+						
 						}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
-					break;
-				}
+					}
+					 cat=4;
+					 pointVal=pointChoice;
+					System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));
+					//System.out.println(question.matchIndex(cat, pointVal));
+					answer = scan.next();
+					System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+					question.updatePoints(cat, question.matchIndex(cat, pointVal));
+					clock=false;
+						break;
 				case 'e':
 				{
 					do {
-						printPointMenu();
+						//printPointMenu();
+						System.out.println(question.toString(5));
 						System.out.println("Choose a point value \n");
 						pointChoice = scan.nextInt();
-					
-						switch(pointChoice)
-						{
-							case 100:
-							{
-								System.out.println("This is the question that will be stored in the array ");
-								break;
-							}
-							case 200:
-							{
-								break;
-							}
-							case 300:
-							{
-								break;
-							}
-							case 400:
-							{
-								break;
-							}
-							case 500:
-							{
-								break;
-							}
-							default: System.out.println("Invalid input");
-						}
+						
+						
 						}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
+					}
+					 cat=5;
+					 pointVal=pointChoice;
+					System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));					//System.out.println(question.matchIndex(cat, pointVal));
+					input=scan.nextLine();
+					answer = scan.nextLine();
+					System.out.println(answer);
+					System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+					question.updatePoints(cat, question.matchIndex(cat, pointVal));
+					clock=false;
 					break;
 					
-					}
+					
 			
 					
 				default: System.out.println("Invalid input");
 			}
-			}while (command !='a' && command != 'b' && command != 'c' && command != 'd' && command !='e');
+			}while (command !='a' && command != 'b' && command != 'c' && command != 'd' && command !='e'|| !clock);
 		}
 		
 
@@ -230,15 +158,15 @@ public class Jepardy
 	              
 	    } // end of the printMenu method
 	  
-	  public static void printPointMenu()
-	  {
-		  System.out.println(
-		  		"100: "
-				+"\n200: "
-		  		+"\n300: "
-				+"\n400: "
-		  		+"\n500: ");
-	  }
+//	  public static void printPointMenu()
+//	  {
+//		  System.out.println(
+//		  		"100: "
+//				+"\n200: "
+//		  		+"\n300: "
+//				+"\n400: "
+//		  		+"\n500: ");
+//	  }
 	  public static void funtionMenu()
 	  {
 		  
