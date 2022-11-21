@@ -1,6 +1,6 @@
 import java.util.Arrays;
 public class Questions {
-
+//base index
 private int index=0;
 //geography 
 private int geographyPoints[]= {100,200,300,400,500};
@@ -40,7 +40,7 @@ private String cse110Questions[] = {"This reserved word is used to construct an 
 		 "In Java, the % symbol has a special name and is used to yield the remainder of integer division."};
 		
 
-public String cse110Answers[] = {"new","compiler","constants","encapsulation","modulus"};
+private String cse110Answers[] = {"new","compiler","constants","encapsulation","modulus"};
 
 //history
 private int historyPoints[] = {100,200,300,400,500};
@@ -55,10 +55,10 @@ private String historyAnswers[] = {"USA","Haitian Revolution","Genghis Khan","Sc
 
 
 
-
-public int matchIndex(int cat, int pointVal )
+//finds the match index of the point value the user chooses
+public int matchIndex(int cat, int pointVal ) //takes the parameters
 {
-	if (cat==1)
+	if (cat==1) //for geography
 	{
 		String matchVal=Integer.toString(pointVal);
 		boolean found=false;
@@ -74,7 +74,7 @@ public int matchIndex(int cat, int pointVal )
 		}
 		return index;
 	}
-	if (cat==2)
+	if (cat==2) //for math
 	{
 		String matchVal=Integer.toString(pointVal);
 		boolean found=false;
@@ -90,7 +90,7 @@ public int matchIndex(int cat, int pointVal )
 		}
 		return index;
 	}
-	if (cat==3)
+	if (cat==3) //for sports
 	{
 		String matchVal=Integer.toString(pointVal);
 		boolean found=false;
@@ -106,7 +106,7 @@ public int matchIndex(int cat, int pointVal )
 		}
 		return index;
 	}
-	if (cat==4)
+	if (cat==4) //cse110
 	{
 		String matchVal=Integer.toString(pointVal);
 		boolean found=false;
@@ -122,7 +122,7 @@ public int matchIndex(int cat, int pointVal )
 		}
 		return index;
 	}
-	if (cat==5)
+	if (cat==5) //history
 	{
 		String matchVal=Integer.toString(pointVal);
 		boolean found=false;
@@ -145,10 +145,10 @@ public int matchIndex(int cat, int pointVal )
 }
 
 
-public String retrieveQuestion(int cat, int match)
+public String retrieveQuestion(int cat, int match) //gets the question to the user
 {
 	
-	if (cat==1)
+	if (cat==1) //if geography
 	{
 		
 		return (geographyQuestions[match]);
@@ -180,7 +180,7 @@ public String retrieveQuestion(int cat, int match)
 	}
 }
 
-public int checkAnswer(String ans, int cat, int match)
+public int checkAnswer(String ans, int cat, int match) //checks the user's answer to see if it is correct vs the right answer
 {
 	
 	if (cat==1)
@@ -243,8 +243,22 @@ public int checkAnswer(String ans, int cat, int match)
 		return -1;
 	}
 }
-
-public String toString(int cat)
+//
+//public void refill()
+//{
+//	for (int i=0;i<5;i++)
+//	{
+//		for (int p=100;p<600;p+=100)
+//		{
+//			geographyPoints[i]=p;
+//			mathematicsPoints[i]=p;
+//			sportsPoints[i]=p;
+//			cse110Points[i]=p;
+//			historyPoints[i]=p;
+//		}
+//	}
+//}
+public String toString(int cat) //prints the point list as a string
 
 {
 	String list="";
@@ -292,7 +306,7 @@ public String toString(int cat)
 		return "x";
 }
 
-public void updatePoints(int cat, int match)
+public void updatePoints(int cat, int match) //after the question is answered the point value becomes 0
 {
 	if (cat==1)
 	{
