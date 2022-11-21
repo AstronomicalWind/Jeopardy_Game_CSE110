@@ -1,3 +1,11 @@
+/**
+Dylan Bealey, Arnav Limaye, Peter Rooney, Diya Sankla
+CSE 110
+Farideh Tadayon-Navabi
+20 November 2022
+
+ */
+
 import java.util.Scanner;
 
 public class Jeopardy
@@ -11,17 +19,18 @@ public class Jeopardy
 		Questions question = new Questions();
 		System.out.println("*****Welcome to Jeopardy!***** \n");
 		System.out.println("Enter Player 1 Name: ");
-		String name = scan.nextLine();
+		String name = scan.nextLine(); //takes first player's name
 		Player player1= new Player(name);
 		player1.assignPlayer1(name);
 		System.out.println("Enter Player 2 Name: ");
-		name = scan.nextLine();
+		name = scan.nextLine(); //takes second player's name
 		Player player2= new Player(name);
 		player2.assignPlayer2(name);
+		System.out.print(player1.toString()+"'s turn"); //p1 goes first
 		String choice;
-		char command;
-		int turn=1;
-		boolean clock=false;
+		char command; //checks the user's input
+		int turn=1; //variable to determine turn
+		boolean clock=false; //goes back to main menu
 		int pointChoice =0;
 		
 		do {
@@ -29,7 +38,7 @@ public class Jeopardy
 		printMainMenu();
 		System.out.println("\nChoose a Topic \n");
 	
-		
+		//checks to see what topic player chooses
 		  choice = scan.next().toLowerCase();
 	      command = choice.charAt(0);
 	      clock=true;
@@ -45,17 +54,21 @@ public class Jeopardy
 					System.out.println("Choose a point value \n");
 					pointChoice = scan.nextInt();
 					
-					
+					//input validations
 					}while(pointChoice != 100 && pointChoice !=200 && pointChoice !=300 && pointChoice != 400 && pointChoice !=500);
 				}
-				int cat=1;
+				int cat=1; //if they choose geography
 				int pointVal=pointChoice;
-				System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal)));
+				System.out.println(question.retrieveQuestion(cat,question.matchIndex(cat, pointVal))); //pulls up the question 
+				                                                                                       //correlated with point val
 				//System.out.println(question.matchIndex(cat, pointVal)); 
 				String input=scan.nextLine();
 				String answer = scan.nextLine();
+				//checks the answer to see if its correct or not
 				int point=question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal));
-				System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal)));
+				//checks the point value
+				System.out.println(question.checkAnswer(answer,cat,question.matchIndex(cat, pointVal))); 
+				//if answer is correct update points
 				question.updatePoints(cat, question.matchIndex(cat, pointVal));
 				turn=player1.getTurn();
 				
@@ -205,7 +218,7 @@ public class Jeopardy
 					clock=false;
 					break;
 					
-				case 'p':
+				case 'p': //displays score
 				{
 					System.out.println(player1.toString()+": "+player1.returnScore());
 					System.out.println(player2.toString()+": "+player2.returnScore());
@@ -220,10 +233,10 @@ public class Jeopardy
 		}
 		
 
-	  public static void printMainMenu()
+	  private static void printMainMenu() //prints the menu out
 	   {
 	    System.out.print(
-	    		"\na: Georgraphy "
+	    		"\na: Geography "
 	    		+"\nb: Mathematics"
 	    		+"\nc: Sports"
 	    		+"\nd: CSE Terminology"
