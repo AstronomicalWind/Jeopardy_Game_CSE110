@@ -1,20 +1,22 @@
 
+
 public class Player {
 Questions question = new Questions();
 private String name;
 private static String p1Name;
 private static String p2Name;
 private static int totalPoints=0;
+private static final int MAXIMUMPOINTS=7500;
 private int points;
 private static int turn=1;
 public Player(String name)
 {
 	this.name=name;
 }
-public void addToTotal(int points)
+private void addToTotal(int points)
 {
 	totalPoints=totalPoints+points;
-	if (totalPoints==7500)
+	if (totalPoints==MAXIMUMPOINTS)
 	{
 		System.out.println("***The Game has ended, press p to view the final score***");
 		
